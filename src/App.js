@@ -1,12 +1,14 @@
 // layout
-import NavBar from './Layout/NavBar';
+import NavBar from './layout/NavBar';
+import DocList from './components/DoctorsList';
 
 
 // pages
-import HomePage from './Pages/Home';
-import AboutPage from './Pages/About';
-import LoginPage from './Pages/Login';
-import SignUpPage from './Pages/SignUp';
+import LandingPage from './pages/Landing';
+import ListPage from './pages/List';
+import AboutPage from './pages/About';
+import LoginPage from './pages/Login';
+import SignUpPage from './pages/SignUp';
 
 
 import { Route, Routes } from 'react-router-dom';
@@ -17,7 +19,8 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/List" element={<ListPage />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/Login" element={<LoginPage />} />
         <Route path="/SignUp" element={<SignUpPage />} />
