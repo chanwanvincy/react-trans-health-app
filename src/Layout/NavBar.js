@@ -34,10 +34,10 @@ function NavBar() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         TransHealth
                     </Typography>
-                    <Button color="inherit" href="/List">List</Button>
-                    <Button color="inherit" href="/About">About</Button>
-                    <Button color="inherit" href="/Login">Login</Button>
-                    <Button color="inherit" href="/SignUp">Sign Up</Button>
+                    <Button color="inherit" href="/list">List</Button>
+                    <Button color="inherit" href="/about">About</Button>
+                    <Button color="inherit" href="/login">Login</Button>
+                    <Button color="inherit" href="/signup">Sign Up</Button>
                 </Toolbar>
             </AppBar>
         </Box>
