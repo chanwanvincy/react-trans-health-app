@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import DoctorsList from "./DoctorsList";
-import DoctorListView from "./DoctorListView";
+import Button from '@mui/material/Button';
 
 function FilterControls({
     doctors, setDoctors,
@@ -117,22 +115,22 @@ function FilterControls({
     }
 
     return (
-        <>
+        <div className='filterControl'>
             {/* <input type="checkbox" name="alliedHealth" id=""
                 onChange={handleAlliedHealthCheckboxChange}
                 checked={alliedHealth}
             /><label htmlFor="">Allied Health</label> */}
-            <button onClick={handleAll}>All</button>
-            <button onClick={handleAlliedHealthFilter}>Allied Health</button>
-            <button onClick={handleClinicalPsychologistFilter}>Clinical Psychologist</button >
-            <button onClick={handlecounsellingPsychologistFilter}>Counselling Psychologist</button>
-            <button onClick={handleGeneralPractitionerFilter}>General Practitioner</button>
-            <button onClick={handleGynaecologyAndUrologyFilter}>Gynaecology And Urology</button>
-            <button onClick={handleNursePractitionerFilter}>Nurse Practitioner</button>
-            <button onClick={handleOtherSpecialistsFilter}>Other Specialists</button>
-            <button onClick={handlePaediatricsFilter}>Paediatrics</button>
-            <button onClick={handlePsychiatristFilter}>Psychiatrist</button>
-            <button onClick={handleSurgicalTransmasculineFilter}>Surgical (Transmasculine)</button>
+            <Button variant="outlined" size="small" disableElevation onClick={handleAll}>All</Button>
+            <Button variant="outlined" size="small" disableElevation onClick={handleAlliedHealthFilter}>Allied Health</Button>
+            <Button variant="outlined" size="small" onClick={handleClinicalPsychologistFilter}>Clinical Psychologist</Button >
+            <Button variant="outlined" size="small" onClick={handlecounsellingPsychologistFilter}>Counselling Psychologist</Button>
+            <Button variant="outlined" size="small" onClick={handleGeneralPractitionerFilter}>General Practitioner</Button>
+            <Button variant="outlined" size="small" onClick={handleGynaecologyAndUrologyFilter}>Gynaecology And Urology</Button>
+            <Button variant="outlined" size="small" onClick={handleNursePractitionerFilter}>Nurse Practitioner</Button>
+            <Button variant="outlined" size="small" onClick={handleOtherSpecialistsFilter}>Other Specialists</Button>
+            <Button variant="outlined" size="small" onClick={handlePaediatricsFilter}>Paediatrics</Button>
+            <Button variant="outlined" size="small" onClick={handlePsychiatristFilter}>Psychiatrist</Button>
+            <Button variant="outlined" size="small" onClick={handleSurgicalTransmasculineFilter}>Surgical (Transmasculine)</Button>
 
             {/* <input type="checkbox" name="clinicalPsychologist" id=""
                 onChange={handleClinicalPsychologistCheckboxChange}
@@ -180,7 +178,7 @@ function FilterControls({
             /><label htmlFor="">Surgical(Transmasculine)</label> */}
 
 
-        </>
+        </div>
 
         // doctors.map((doctor, index) =>
         //     < div className="doctor" key={index} >

@@ -1,5 +1,6 @@
 import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
+import Button from "@mui/material/Button";
 
 const AddPage = ({ setDoctors }) => {
     const [formData, setFormData] = useState({
@@ -41,6 +42,7 @@ const AddPage = ({ setDoctors }) => {
 
                 <label htmlFor="category">Select Category </label>
                 <select name="category" id="" onChange={handleInputChange}>
+                    <option value=""> </option>
                     <option value="Allied Health">Allied Health</option>
                     <option value="Clinical Psychologist">Clinical Psychologist</option>
                     <option value="Counselling Psychologist">Counselling Psychologist</option>
@@ -67,7 +69,7 @@ const AddPage = ({ setDoctors }) => {
                 <input type="checkbox" /><label htmlFor="u25">Accepts Patients Under 18</label><br />
                 <input type="checkbox" /><label htmlFor="gp_ref_required">GP referral may be required</label><br />
                 <input type="checkbox" /><label htmlFor="low_cost_ndis_option">Low Cost/ NDIS option available</label><br /> */}
-                <button>Submit</button>
+                <Button variant="contained" color="secondary" disableElevation href="/List">Submit</Button>
             </form>
         </>
 
