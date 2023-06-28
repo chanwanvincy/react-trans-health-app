@@ -35,9 +35,10 @@ function NavBar() {
                         TransHealth
                     </Typography>
                     <Button color="inherit" href="/list">List</Button>
-                    <Button color="inherit" href="/about">About</Button>
+                    <Button color="inherit" href="/add">Add</Button>
+                    {/* <Button color="inherit" href="/about">About</Button>
                     <Button color="inherit" href="/login">Login</Button>
-                    <Button color="inherit" href="/signup">Sign Up</Button>
+                    <Button color="inherit" href="/signup">Sign Up</Button> */}
                 </Toolbar>
             </AppBar>
         </Box>

@@ -17,6 +17,8 @@ function FilterControls({
     filteredDoctors, setFilteredDoctors,
     filterList, setFilterList }) {
 
+    // console.log('filter controls')
+    // console.log(doctors)
 
     // const filterDoctorsByCategory = (category) => {
     //     let filteredDoctorsList = doctors.filter((category) => doctor['category'] === category

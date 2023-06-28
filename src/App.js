@@ -5,39 +5,55 @@ import DocList from './components/DoctorsList';
 
 // pages
 import LandingPage from './pages/Landing';
-import ListPage from './pages/List';
+import ListPage from './pages/ListPage';
 import AboutPage from './pages/About';
 import LoginPage from './pages/Login';
 import SignUpPage from './pages/SignUp';
-import DoctorPage from './pages/Doctor';
+import DoctorPage from './pages/DoctorPage';
+import AddPage from './pages/Add';
+import EditPage from './pages/EditPage';
 
 
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
+
 
 function App() {
   const [doctors, setDoctors] = useState([])
-  const [currentDoctor, setCurrentDoctor] = useState([])
-  const idRegex = /[0-200]/g
-  const docPageUrl = `"/${idRegex}/info"`
+  const getDoctors = () => {
+    fetch('/api/doctors')
+      .then(res => res.json())
+      .then(doctors => setDoctors(doctors))
+  }
+
+  useEffect(getDoctors, [])
+  // console.log('app level')
+  // console.log(doctors)
 
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/List" element={<ListPage
+        <Route path="/" element={<LandingPage
           doctors={doctors}
-          setDoctors={setDoctors}
+        />} />
+        <Route path="/list" element={<ListPage
+          doctors={doctors}
         />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/:id/info" element={<DoctorPage
+        <Route path="/info/:id" element={<DoctorPage
           doctors={doctors}
-          currentDoctor={currentDoctor}
         />} />
+        <Route path="/edit/:id" element={<EditPage
+          doctors={doctors}
+        />} />
+        <Route path="add" element={<AddPage
+          setDoctors={setDoctors}
+        />} />
+        {/* <Route path="/api/doctors" element={getDoctors} /> */}
       </Routes>
     </>
 
